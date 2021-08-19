@@ -1,0 +1,482 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Pairing Tutorial - Cryptimeleon</title>
+<meta name="description" content="Documentation page for the Cryptimeleon cryptography libraries.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Cryptimeleon">
+<meta property="og:title" content="Pairing Tutorial">
+<meta property="og:url" content="/getting-started/pairing-tutorial.html">
+
+
+  <meta property="og:description" content="Documentation page for the Cryptimeleon cryptography libraries.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="/getting-started/pairing-tutorial.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#eeeeee">
+
+  </head>
+
+  <body class="layout--single wide">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/logo.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          Cryptimeleon
+          <span class="site-subtitle">Prototyping of Cryptographic Constructions</span>
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Getting Started</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/getting-started/first-steps.html">First Steps</a></li>
+          
+            <li><a href="/getting-started/5-minute-tutorial.html">5-minute Tutorial</a></li>
+          
+            <li><a href="/getting-started/pairing-tutorial.html" class="active">Pairing Tutorial</a></li>
+          
+            <li><a href="/getting-started/protocols-tutorial.html">Protocol Tutorial</a></li>
+          
+            <li><a href="/getting-started/implement-elgamal.html">ElGamal Tutorial</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Documentation</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/how-do-I.html">How do I ...?</a></li>
+          
+            <li><a href="/docs/lazy-eval.html">Lazy Evaluation</a></li>
+          
+            <li><a href="/docs/bilinear-groups.html">Bilinear Groups</a></li>
+          
+            <li><a href="/docs/representations.html">Representations</a></li>
+          
+            <li><a href="/docs/benchmarking.html">Benchmarking</a></li>
+          
+            <li><a href="/docs/groupsig.html">Group Signatures</a></li>
+          
+            <li><a href="/docs/javadoc.html">Javadocs</a></li>
+          
+            <li><a href="/docs/faq.html">Frequently Asked Questions</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">For Contributors</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/contributors/how-to-contribute.html">How to Contribute</a></li>
+          
+            <li><a href="/contributors/composite-builds.html">Composite Builds</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Pairing Tutorial">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Pairing Tutorial
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#example-implementing-a-pairing-based-signature-scheme">Example: Implementing a pairing-based signature scheme</a><ul><li><a href="#setting-up-the-bilinear-group">Setting up the bilinear group</a></li><li><a href="#generating-a-key-pair">Generating a key pair</a></li><li><a href="#computing-a-signature">Computing a signature</a></li><li><a href="#verifying-a-signature">Verifying a signature</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="example-implementing-a-pairing-based-signature-scheme">Example: Implementing a pairing-based signature scheme</h1>
+
+<p>Cryptimeleon Math is a library supplying the mathematical basics for cryptography.</p>
+
+<p>In this notebook, we’ll take a look at how to implement a pairing-based scheme.</p>
+
+<p>The (multi-message) <a href="https://eprint.iacr.org/2015/525">Pointcheval-Sanders signature scheme</a> is a very useful digital signature scheme for advanced cryptographic constructions because of its elegant and simple algebraic structure. We’ll use it as an example for implementing a cryptographic scheme.</p>
+
+<p>We’ll work alongside the scheme’s definition in the paper:
+<img src="/assets/images/pairing-tutorial/pairing-tutorial_attach_1_image.png" alt="image.png" /></p>
+
+<p>… and show how to implement it.</p>
+
+<hr />
+
+<hr />
+<p><em>Note:</em>
+You can also check this page out in an
+interactive Jupyter notebook by clicking the badge below:</p>
+
+<p><a href="https://mybinder.org/v2/gh/cryptimeleon/cryptimeleon.github.io/main?filepath=getting-started%2Fpairing-tutorial.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" /></a></p>
+
+<hr />
+
+<h2 id="setting-up-the-bilinear-group">Setting up the bilinear group</h2>
+
+<p><img src="/assets/images/pairing-tutorial/pairing-tutorial_attach_2_image-2.png" alt="image-2.png" />
+First, we need to set up the bilinear group setting required for the scheme. We need to know the type of pairing and the desired security parameter. In this case we want a type 3 pairing and 100 bit security.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">maven</span> <span class="n">org</span><span class="o">.</span><span class="na">cryptimeleon</span><span class="o">:</span><span class="nl">math:</span><span class="mf">2.1</span><span class="o">.</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.cryptimeleon.math.structures.groups.elliptic.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.cryptimeleon.math.structures.groups.elliptic.type3.bn.BarretoNaehrigBilinearGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.cryptimeleon.math.structures.groups.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.cryptimeleon.math.structures.groups.mappings.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.cryptimeleon.math.structures.rings.zn.*</span><span class="o">;</span>
+
+<span class="c1">// Choose number of messages r</span>
+<span class="kt">var</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+
+<span class="c1">// BN pairing is type 3 and we specify a 100 bit security parameter</span>
+<span class="nc">BilinearGroup</span> <span class="n">bilinearGroup</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BarretoNaehrigBilinearGroup</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+
+<span class="c1">// Let's collect the values for our pp</span>
+<span class="nc">Group</span> <span class="n">groupG1</span> <span class="o">=</span> <span class="n">bilinearGroup</span><span class="o">.</span><span class="na">getG1</span><span class="o">();</span>
+<span class="nc">Group</span> <span class="n">groupG2</span> <span class="o">=</span> <span class="n">bilinearGroup</span><span class="o">.</span><span class="na">getG2</span><span class="o">();</span>
+<span class="nc">Group</span> <span class="n">groupGT</span> <span class="o">=</span> <span class="n">bilinearGroup</span><span class="o">.</span><span class="na">getGT</span><span class="o">();</span>
+<span class="nc">BilinearMap</span> <span class="n">e</span> <span class="o">=</span> <span class="n">bilinearGroup</span><span class="o">.</span><span class="na">getBilinearMap</span><span class="o">();</span>
+<span class="nc">BigInteger</span> <span class="n">p</span> <span class="o">=</span> <span class="n">groupG1</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+<span class="nc">Zn</span> <span class="n">zp</span> <span class="o">=</span> <span class="n">bilinearGroup</span><span class="o">.</span><span class="na">getZn</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Generated bilinear group of order "</span> <span class="o">+</span> <span class="n">p</span><span class="o">);</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generated bilinear group of order 66696243400694322499906033083377966773014133293855982130239936888504801018589797
+</code></pre></div></div>
+
+<h2 id="generating-a-key-pair">Generating a key pair</h2>
+
+<p><img src="/assets/images/pairing-tutorial/pairing-tutorial_attach_5_image-2.png" alt="image-2.png" /></p>
+
+<p>For a key pair, we need to generate random exponents \(x\) and \(y_i\) as the secret key. Because it’s a group of order \(p\), we interpret the exponents as elements of \(\mathbb{Z}_p\).</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Generate secret key</span>
+
+<span class="kt">var</span> <span class="n">x</span> <span class="o">=</span> <span class="n">zp</span><span class="o">.</span><span class="na">getUniformlyRandomElement</span><span class="o">();</span>
+<span class="kt">var</span> <span class="n">y</span> <span class="o">=</span> <span class="n">zp</span><span class="o">.</span><span class="na">getUniformlyRandomElements</span><span class="o">(</span><span class="n">r</span><span class="o">);</span> <span class="c1">//computes a vector of r random numbers y_0, ..., y_(r-1)</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"x = "</span> <span class="o">+</span> <span class="n">x</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"y = "</span> <span class="o">+</span> <span class="n">y</span><span class="o">);</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = 46206092049483282902147560170030458068873525804752757347924905267671149042526401
+y = [8433521202215895515535325363988308863256968196229676102420289710769717633768702, 20045659043742941798761345663814841542683088598001163344589602941197595324504931, 42846149352097015590810621081124618956455727924733608372954593890627710801402138]
+</code></pre></div></div>
+
+<p>Then we can compute the corresponding public key easily and run precomputation on it to speed up later verifications:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Generate public key</span>
+
+<span class="kt">var</span> <span class="n">tildeg</span> <span class="o">=</span> <span class="n">groupG2</span><span class="o">.</span><span class="na">getUniformlyRandomElement</span><span class="o">();</span>
+<span class="kt">var</span> <span class="n">tildeX</span> <span class="o">=</span> <span class="n">tildeg</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="n">x</span><span class="o">).</span><span class="na">precomputePow</span><span class="o">();</span> <span class="c1">// this computes X = tildeg^x as above and runs precomputations to speed up later pow() calls on tildeX</span>
+<span class="kt">var</span> <span class="n">tildeY</span> <span class="o">=</span> <span class="n">tildeg</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="n">y</span><span class="o">).</span><span class="na">precomputePow</span><span class="o">();</span> <span class="c1">// because y is a vector, this yields a vector of values tildeg.pow(y_0), tildeg.pow(y_1), ...</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"tildeg = "</span> <span class="o">+</span> <span class="n">tildeg</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"tildeX = "</span> <span class="o">+</span> <span class="n">tildeX</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"tildeY = "</span> <span class="o">+</span> <span class="n">tildeY</span><span class="o">);</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tildeg = ([30364062494556030154492132785445015235080117873473589964478044688494875685280833, 36804621839328167058963672177009073288033217804690824680364443384870441714442212],[4389003833695869018973385406310986871927735818252604788531603125565755161329790, 42129880171322385858958924166566904194626134806642703524072375883282414968931527])
+tildeX = ([20897722162398700211384488641256724302854615365512741971113479706928216957955515, 34289414013264254452645485833900324045926777405443397046033213693717922532616761],[54214480898528195347749022723503070873995856825688127908606571394319267761364820, 25124411913778996197700621839726689038334677597706593278235207131335176383559314])
+tildeY = [([59859639891171979351701336101320198977750232859057332027897501252343888730145842, 54702052044780703925066715057517604136942978932510304805641581852756507537349662],[22805143505830760222787623443655674673981572916741253922872371631480834989659053, 23972966571442105296023583335578120127115545092127873211366307076161246909839398]), ([66362470546460376740533896441633010778770873778822948925991869149862835581203877, 21461282606425808022648044521382221790417721329367224939273997037440933121967325],[59933455244547823874502970087195695922586754994960756636963439933246695103063364, 30422563499621660220435031470789316696412565193913126702037745877887225233659603]), ([19354543412211669193082303071964811156090006312369079440030273671745217723215084, 49700148682564003432426542115830419129532250223436404407275483385343060331489973],[5740096537804009512002985303071709839635091125500871727747285883307023132337898, 5314894452210382575212072885941591386247171472839088641771698300864312614515834])]
+</code></pre></div></div>
+
+<h2 id="computing-a-signature">Computing a signature</h2>
+
+<p><img src="/assets/images/pairing-tutorial/pairing-tutorial_attach_10_image.png" alt="image.png" /></p>
+
+<p>Computing a signature works as you’d expect now with what we’ve already seen. Messages for Pointcheval-Sanders lie in \(\mathbb{Z}_p\), but we can use a hash function \(\mathcal{H}:\{0,1\}\rightarrow \mathbb{Z}_p\) to sign arbitrary strings.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.cryptimeleon.math.structures.rings.cartesian.RingElementVector</span><span class="o">;</span>
+
+<span class="c1">// Preparing messages ("Hello PS sigs", 42, 0, 0, ...)</span>
+<span class="kt">var</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RingElementVector</span><span class="o">(</span>
+    <span class="n">bilinearGroup</span><span class="o">.</span><span class="na">getHashIntoZGroupExponent</span><span class="o">().</span><span class="na">hash</span><span class="o">(</span><span class="s">"Hello PS sigs"</span><span class="o">),</span> 
+    <span class="n">zp</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="mi">42</span><span class="o">)).</span><span class="na">pad</span><span class="o">(</span><span class="n">zp</span><span class="o">.</span><span class="na">getZeroElement</span><span class="o">(),</span> <span class="n">r</span>
+<span class="o">);</span>
+
+<span class="c1">// Computing signature</span>
+<span class="kt">var</span> <span class="n">sigma1</span> <span class="o">=</span> <span class="n">groupG1</span><span class="o">.</span><span class="na">getUniformlyRandomNonNeutral</span><span class="o">().</span><span class="na">compute</span><span class="o">();</span> <span class="c1">// h</span>
+<span class="kt">var</span> <span class="n">sigma2</span> <span class="o">=</span> <span class="n">sigma1</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">y</span><span class="o">.</span><span class="na">innerProduct</span><span class="o">(</span><span class="n">m</span><span class="o">))).</span><span class="na">compute</span><span class="o">();</span> <span class="c1">// h^{x + sum(y_i*m_i)}</span>
+<span class="c1">// The compute() call is optional but will cause sigma1 and sigma2 to be computed concurrently in the background.</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"sigma1 = "</span> <span class="o">+</span> <span class="n">sigma1</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"sigma2 = "</span> <span class="o">+</span> <span class="n">sigma2</span><span class="o">);</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sigma1 = (35114985525781212464722305696356165681847235414223513225389031902478665705196505,35537562725045383610055360139270996657594853741273753179700289044536617360664873)
+sigma2 = (7387712439002187784202432079557424185780753898017366219405503936202522474410996,25494035052919459317960606588015469622654116298479107232577473625816410319343644)
+</code></pre></div></div>
+
+<h2 id="verifying-a-signature">Verifying a signature</h2>
+
+<p><img src="/assets/images/pairing-tutorial/pairing-tutorial_attach_13_image.png" alt="image.png" /></p>
+
+<p>For this verification, we need to emply the pairing <code class="language-plaintext highlighter-rouge">e</code>.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="n">sigma1</span><span class="o">.</span><span class="na">isNeutralElement</span><span class="o">()</span> 
+    <span class="o">&amp;&amp;</span> <span class="n">e</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">sigma1</span><span class="o">,</span> <span class="n">tildeX</span><span class="o">.</span><span class="na">op</span><span class="o">(</span><span class="n">tildeY</span><span class="o">.</span><span class="na">innerProduct</span><span class="o">(</span><span class="n">m</span><span class="o">))).</span><span class="na">equals</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">apply</span><span class="o">(</span><span class="n">sigma2</span><span class="o">,</span> <span class="n">tildeg</span><span class="o">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>true
+</code></pre></div></div>
+
+<p>If this pairing computation seems slow, check out the <a href="https://github.com/cryptimeleon/mclwrap">mclwrap</a> addon for a faster bilinear group.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/cryptimeleon" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/cryptimeleon" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 Cryptimeleon. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
